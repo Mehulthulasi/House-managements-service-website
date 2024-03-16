@@ -1,0 +1,748 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- title of site -->
+    <title>Directory Landing Page</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png" />
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--flaticon.css-->
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+
+    <!--slick.css-->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+
+    <!--style.css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!--header-top start -->
+    <!--header-top start -->
+<!--header-top start -->
+<header id="header-top" class="header-top">
+    <ul>
+        <li>
+            <div class="header-top-left">
+                <ul>
+                    <li class="select-opt">
+                        <select name="language" id="language">
+                            <option value="default">EN</option>
+                            <option value="Bangla">BN</option>
+                            <option value="Arabic">AB</option>
+                        </select>
+                    </li>
+
+                    <!-- Replace the "Sign In" link with a button -->
+                    <li class="select-opt">
+                        <button onclick="window.location.href='http://localhost/listrace-v1.0/login.php'">Sign In</button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="head-responsive-right pull-right">
+            <div class="header-top-right">
+                <ul>
+                    
+                    <!-- Register link can be added here if needed -->
+                </ul>
+            </div>
+        </li>
+    </ul>
+</header><!--/.header-top-->
+<!--header-top end -->
+
+<!-- Login form container -->
+
+<!-- Add the following script to toggle the login form visibility -->
+
+
+<!-- Rest of your HTML content -->
+<!--/.header-top-->
+    <!--header-top end -->
+
+    <!-- top-area Start -->
+    <section class="top-area">
+        <div class="header-area">
+            <!-- Start Navigation -->
+            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy" data-minus-value-desktop="70"
+                data-minus-value-mobile="55" data-speed="1000">
+
+                <div class="container">
+
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Falcon<span>inc</span></a>
+
+                    </div><!--/.navbar-header-->
+                    <!-- End Header Navigation -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class=" scroll active"><a href="#home">home</a></li>
+                            <li class="scroll"><a href="#list-topics">services</a></li>
+                            <li class="scroll"><a href="#reviews">review</a></li>
+
+                            <li class="scroll"><a href="#" onclick="location.href = 'http://localhost/listrace-v1.0/contact_us.php';">contact</a></li>
+							
+                        </ul><!--/.nav -->
+                    </div><!-- /.navbar-collapse -->
+                </div><!--/.container-->
+            </nav><!--/nav-->
+            <!-- End Navigation -->
+        </div><!--/.header-area-->
+        <div class="clearfix"></div>
+
+    </section><!-- /.top-area-->
+    <!-- top-area End -->
+
+    <!--welcome-hero start -->
+    <section id="home" class="welcome-hero">
+		<div class="container">
+			<div class="welcome-hero-txt">
+				<h2>Home management made simple,<br>find everything you need in one place!</h2>
+				<p>
+					Effortless home management is just a click away. Explore quality services for a well-maintained and hassle-free living experience
+				</p>
+			</div>
+			<div class="welcome-hero-serch-box">
+				<div class="welcome-hero-serch-box">
+					<div class="welcome-hero-form" style="display: flex; gap: 10px;">
+						<div class="single-welcome-hero-form">
+							<h3>What?</h3>
+							<form id="searchForm" onsubmit="return updateFormAction()">
+								<input type="text" id="searchInput" placeholder="Ex: place" oninput="showList('searchInput', 'placeList', places)" />
+							</form>
+							<script>
+								function updateFormAction() {
+									var searchInput = document.getElementById('searchInput').value.toLowerCase();
+									var form = document.getElementById('searchForm');
+	
+									if (searchInput === 'cleaning') {
+										form.action = 'http://localhost/listrace-v1.0/cleaning.php';
+									} else if (searchInput === 'security') {
+										form.action = 'http://localhost/listrace-v1.0/security.php';
+									} else if (searchInput === 'property management') {
+										form.action = 'http://localhost/listrace-v1.0/landscape.php';
+									} else if (searchInput === 'security service') {
+										form.action = 'http://localhost/listrace-v1.0/security.php';
+									} else {
+										// Default action (you can change this to another default URL)
+										form.action = 'index.html';
+									}
+	
+									// Optional: Uncomment the following line to submit the form immediately
+									// form.submit();
+	
+									return false; // Prevent the form from submitting immediately
+								}
+	
+								// Assuming you have a function showList defined elsewhere in your code
+								function showList(inputId, listId, data) {
+									// Your existing showList function logic
+								}
+	
+								var places = ["Cleaning", "Landscaping", "property management", "Security", "Automobile Service"];
+							</script>
+							<div class="welcome-hero-form-icon">
+								<i class="flaticon-list-with-dots"></i>
+							</div>
+							<div id="placeList" class="place-list"></div>
+						</div>
+	
+						<div class="single-welcome-hero-form">
+							<h3>Location</h3>
+							<form action="index.html">
+								<input type="text" id="locationInput" placeholder="Ex: London, New York, Rome" oninput="showList('locationInput', 'locationList', locations)" />
+							</form>
+							<div class="welcome-hero-form-icon">
+								<i class="flaticon-gps-fixed-indicator"></i>
+							</div>
+							<div id="locationList" class="location-list"></div>
+						</div>
+	
+						<div class="welcome-hero-search" style="margin-left: 10px;">
+							<button class="welcome-hero-btn" onclick="submitSearchForm()">
+								Search <i data-feather="search"></i>
+							</button>
+						</div>
+					</div>
+	
+					<script>
+						var locations = ["London", "New York", "Rome", "Paris", "Tokyo", "Sydney"];
+	
+						function showList(inputId, listId, data) {
+							var input = document.getElementById(inputId);
+							var filter = input.value.toLowerCase();
+							var list = document.getElementById(listId);
+	
+							// Filter data based on the input
+							var filteredData = data.filter(item => item.toLowerCase().includes(filter));
+	
+							// Display the filtered data in the dropdown
+							list.innerHTML = '';
+							filteredData.forEach(item => {
+								var listItem = document.createElement('div');
+								listItem.textContent = item;
+								listItem.addEventListener('click', function () {
+									// Set the selected item in the input field
+									input.value = item;
+									// Clear the dropdown
+									list.innerHTML = '';
+								});
+								list.appendChild(listItem);
+							});
+	
+							// Show or hide the dropdown based on whether there are matching items
+							list.style.display = filter.trim() === "" ? "none" : "block";
+						}
+	
+						// Close the dropdown when clicking outside the input field and dropdown
+						document.addEventListener('click', function (event) {
+							closeDropdowns(event);
+						});
+	
+						function closeDropdowns(event) {
+							var dropdowns = document.getElementsByClassName("place-list");
+							for (var i = 0; i < dropdowns.length; i++) {
+								var dropdown = dropdowns[i];
+								if (!event.target.matches('#searchInput') && !event.target.matches('#placeList')) {
+									dropdown.style.display = 'none';
+								}
+							}
+	
+							dropdowns = document.getElementsByClassName("location-list");
+							for (var i = 0; i < dropdowns.length; i++) {
+								var dropdown = dropdowns[i];
+								if (!event.target.matches('#locationInput') && !event.target.matches('#locationList')) {
+									dropdown.style.display = 'none';
+								}
+							}
+						}
+	
+						function submitSearchForm() {
+							var searchInput = document.getElementById('searchInput').value.toLowerCase();
+							var locationInput = document.getElementById('locationInput').value.toLowerCase();
+	
+							var form = document.getElementById('searchForm');
+	
+							if (searchInput === 'cleaning') {
+								form.action = 'cleaning.php';
+							} else if (searchInput === 'security') {
+								form.action = 'security.php';
+							} else if (searchInput === 'property management') {
+								form.action = 'property_management.php';
+							} else if (searchInput === 'automobile service') {
+								form.action = 'automobile_service.php';
+							} else {
+								// Default action (you can change this to another default URL)
+								form.action = 'index.html';
+							}
+	
+							// Append location to the action URL
+							if (locationInput) {
+								form.action += '?location=' + encodeURIComponent(locationInput);
+							}
+	
+							// Submit the form
+							form.submit();
+						}
+					</script>
+	
+					<style>
+						/* Style the dropdown */
+						.place-list,
+						.location-list {
+							display: none;
+							position: absolute;
+							background-color: #f1f1f1;
+							box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+							z-index: 1;
+							width: 100%;
+						}
+	
+						.place-list div,
+						.location-list div {
+							padding: 12px;
+							cursor: pointer;
+						}
+	
+						.place-list div:hover,
+						.location-list div:hover {
+							background-color: #ddd;
+						}
+					</style>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/.welcome-hero-->
+    <!--welcome-hero end -->
+
+    <!--list-topics start -->
+    <section id="list-topics" class="list-topics">
+        <div class="container">
+            <div class="list-topics-content">
+                <ul>
+                    <li>
+						<div class="single-list-topics-content">
+							<button class="custom-button" onclick="redirectToPage('index.php');">
+								<div class="single-list-topics-icon">
+									<img src="assets/images/imag/home.png" alt="House Management Icon">
+								</div>
+								<h2>House Management</h2>
+								<p>150 listings</p>
+							</button>
+						</div>
+					</li>
+					
+					<script>
+						function redirectToPage(page) {
+							// Assuming the pages are in the same directory, adjust the path as needed
+							window.location.href = 'http://localhost/listrace-v1.0/housemanagement.php';
+						}
+					</script>
+					
+                    <li>
+                        <div class="single-list-topics-content">
+							<button class="custom-button2" onclick="redirectToNextPage()">
+								<div class="single-list-topics-icon">
+									<img src="assets/images/imag/mop.png" alt="Restaurant Icon">
+								</div>
+								<h2>Cleaning</h2>
+								<p>100 listings</p>
+							</button>
+						</div>
+						
+						<script>
+							function redirectToNextPage() {
+								// Replace 'next_page.html' with the actual URL of the next HTML page
+								window.location.href = 'http://localhost/listrace-v1.0/cleaning.php';
+							}
+						</script>
+                    </li>
+                    <li>
+						<div class="single-list-topics-content">
+							<button class="custom-button2" onclick="redirectToLandscapingPage()">
+								<div class="single-list-topics-icon">
+									<img src="assets/images/imag/park.png" alt="Landscaping Icon">
+								</div>
+								<h2>Landscaping</h2>
+								<p>100 listings</p>
+							</button>
+						</div>
+						<script>
+							function redirectToLandscapingPage() {
+								// Replace 'landscaping_page.html' with the actual URL of the landscaping HTML page
+								window.location.href = 'http://localhost/listrace-v1.0/landscape.php';
+							}
+						</script>
+					</li>
+					
+                    <li>
+						<div class="single-list-topics-content">
+							<button class="custom-button2" onclick="redirectToNextPage()">
+								<div class="single-list-topics-icon">
+									<img src="assets/images/imag/shield.png" alt="Restaurant Icon">
+								</div>
+								<h2>Security</h2>
+								<p>100 listings</p>
+							</button>
+						</div>
+						<script>
+							function redirectToNextPage() {
+								// Replace 'next_page.html' with the actual URL of the next HTML page
+								window.location.href = 'http://localhost/listrace-v1.0/security.php';
+							}
+						</script>
+                    </li>
+                    <li>
+						<div class="single-list-topics-content">
+							<button class="custom-button2" onclick="redirectToRentalPage()">
+								<div class="single-list-topics-icon">
+									<img src="assets/images/imag/rental.png" alt="Rental Icon">
+								</div>
+								<h2>Rental</h2>
+								<p>100 listings</p>
+							</button>
+						</div>
+						<script>
+							function redirectToRentalPage() {
+								// Replace 'rental_page.html' with the actual URL of the rental HTML page
+								window.location.href = 'http://localhost/listrace-v1.0/rental.php';
+							}
+						</script>
+					</li>
+					
+                </ul>
+            </div>
+        </div><!--/.container-->
+
+    </section><!--/.list-topics-->
+    <!--list-topics end-->
+
+    <!--works start -->
+	<section id="reviews" class="reviews">
+		<div class="section-header">
+			<h2>clients reviews</h2>
+			<p>What our client say about us</p>
+		</div><!--/.section-header-->
+		<div class="reviews-content">
+			<div class="testimonial-carousel">
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c1.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Tom Leakar</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c2.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>monirul islam</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c3.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Shohrab Hossain</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c4.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Tom Leakar</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c1.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Tom Leakar</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c2.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>monirul islam</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c3.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Shohrab Hossain</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/images/clients/c4.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Tom Leakar</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+			</div>
+		</div>
+
+	</section>
+	<section id="statistics"  class="statistics">
+		<div class="container">
+			<div class="statistics-counter"> 
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">100 </div> <span>K+</span>
+						</div><!--/.statistics-content-->
+						<h3>listings</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">40</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>listing categories</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">65</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>visitors</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">50</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>happy clients</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+			</div><!--/.statistics-counter-->	
+		</div><!--/.container-->
+
+	</section><!--/.counter-->	
+	<!-- statistics end -->
+	<footer id="footer"  class="footer">
+		<div class="container">
+			<div class="footer-menu">
+				   <div class="row">
+					   <div class="col-sm-3">
+							<div class="navbar-header">
+							<a class="navbar-brand" href="index.html">Falcon<span>inc</span></a>
+						</div><!--/.navbar-header-->
+					   </div>
+					   <div class="col-sm-9">
+						   <ul class="footer-menu-item">
+							<li class="scroll"><a href="#works">services</a></li>
+							<li class="scroll"><a href="#explore">explore</a></li>
+							<li class="scroll"><a href="#reviews">review</a></li>
+							<li class="scroll"><a href="#" onclick="openContactWindow()">contact</a></li>
+							
+						</ul><!--/.nav -->
+					   </div>
+			   </div>
+			</div>
+			<div class="hm-footer-copyright">
+				<div class="row">
+					<div class="col-sm-5">
+						<p>
+							
+						</p><!--/p-->
+					</div>
+					
+				</div>
+				
+			</div><!--/.hm-footer-copyright-->
+		</div><!--/.container-->
+
+		<div id="scroll-Top">
+			<div class="return-to-top">
+				<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+			</div>
+			
+		</div><!--/.scroll-Top-->
+		
+	</footer>
+	<!-- statistics strat -->
+	
+	<script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
